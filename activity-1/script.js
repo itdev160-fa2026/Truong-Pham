@@ -29,8 +29,8 @@ console.log("typeof notAssigned:", typeof notAssigned);
 // Part 5: Variable Reassignment
 console.log("=== Variable Reassignment ===");
 console.log("Original studentName:", studentName);
-studentName = "Alex Johnson";
+studentName = "Ben Pham";
 console.log("Updated studentName:", studentName);
 
-// Thử thay đổi const -> sẽ báo lỗi trong console
+// Try to change const -> error in console
 // age = 25;  // Uncomment để thấy lỗi
