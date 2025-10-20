@@ -1,0 +1,218 @@
+/* ---------- General Page Layout ---------- */
+body {
+    font-family: Arial, sans-serif;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #333;
+  }
+  
+  h1 {
+    color: #fff;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  p {
+    text-align: center;
+    color: #f0f0f0;
+  }
+  
+  /* ---------- Container ---------- */
+  .todo-container {
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 30px;
+    margin: 25px 0;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* ---------- Input Section ---------- */
+  .input-section {
+    border-bottom: 2px solid #eee;
+    padding-bottom: 20px;
+    margin-bottom: 25px;
+  }
+  
+  .input-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+  }
+  
+  #taskInput {
+    flex: 1;
+    min-width: 200px;
+    padding: 10px 15px;
+    font-size: 16px;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+  }
+  
+  #taskInput:focus {
+    outline: none;
+    border-color: #764ba2;
+  }
+  
+  /* Priority selector */
+  #prioritySelect {
+    padding: 10px 12px;
+    font-size: 16px;
+    border-radius: 6px;
+    border: 2px solid #ddd;
+    background-color: #f9f9f9;
+    cursor: pointer;
+  }
+  
+  #prioritySelect:focus {
+    border-color: #764ba2;
+  }
+  
+  /* Add Task Button */
+  #addTaskBtn {
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 18px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  #addTaskBtn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* ---------- Filter Section ---------- */
+  .filter-section {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .filter-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  
+  .filter-btn {
+    padding: 10px 18px;
+    border: none;
+    border-radius: 20px;
+    background-color: #eee;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.2s ease;
+  }
+  
+  .filter-btn:hover {
+    background-color: #ddd;
+  }
+  
+  .filter-btn.active {
+    background-color: #764ba2;
+    color: #fff;
+  }
+  
+  /* ---------- Task List ---------- */
+  .task-item {
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 6px;
+    padding: 15px;
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+  }
+  
+  .task-item.done {
+    background-color: #d4edda;
+    color: #155724;
+    text-decoration: line-through;
+    opacity: 0.8;
+  }
+  
+  /* Priority Colors */
+  .priority-high {
+    color: #dc3545;
+    font-weight: bold;
+  }
+  .priority-medium {
+    color: #ffc107;
+    font-weight: bold;
+  }
+  .priority-low {
+    color: #28a745;
+    font-weight: bold;
+  }
+  
+  /* ---------- Empty State ---------- */
+  .empty-state {
+    text-align: center;
+    color: #888;
+    font-style: italic;
+    padding: 15px 0;
+  }
+  
+  /* ---------- Bulk Actions ---------- */
+  .bulk-actions {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 25px;
+  }
+  
+  .bulk-btn {
+    padding: 10px 18px;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    color: white;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .bulk-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Danger button (red) */
+  .bulk-btn.danger {
+    background: linear-gradient(45deg, #e53935, #ff7043);
+  }
+  
+  /* ---------- Stats Section ---------- */
+  .stats-section {
+    margin-top: 20px;
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  /* ---------- Responsive Design ---------- */
+  @media (max-width: 768px) {
+    .input-controls {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  
+    #taskInput,
+    #prioritySelect,
+    #addTaskBtn {
+      width: 100%;
+    }
+  
+    .bulk-actions {
+      flex-direction: column;
+    }
+  }
+  
