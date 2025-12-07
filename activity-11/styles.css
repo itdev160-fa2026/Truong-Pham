@@ -1,0 +1,171 @@
+/* ===========================================
+   Activity 11 – React Tic-Tac-Toe (Enhanced UI)
+   =========================================== */
+
+   body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #1d2671, #c33764);
+    margin: 0;
+    padding: 40px 20px;
+    min-height: 100vh;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* ---------- Main Layout ---------- */
+  .game {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 30px 40px;
+    border-radius: 20px;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.35);
+  }
+  
+  /* ---------- Game & Info Cards ---------- */
+  .game-board,
+  .game-info {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 25px 30px;
+    border-radius: 18px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+    min-width: 280px;
+  }
+  
+  .game-info h2 {
+    margin-top: 0;
+    text-align: center;
+    color: #444;
+  }
+  
+  /* ---------- Status ---------- */
+  .status {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 18px;
+    text-align: center;
+    color: #1d2671;
+  }
+  
+  /* ---------- Board ---------- */
+  .board-row {
+    display: flex;
+  }
+  
+  .square {
+    width: 110px;
+    height: 110px;
+    background: linear-gradient(135deg, #fdfdfd, #ececec);
+    border: none;
+    border-radius: 14px;
+    margin: 6px;
+    font-size: 42px;
+    font-weight: bold;
+    cursor: pointer;
+    outline: none;
+    box-shadow: inset 0 0 0 2px #ddd, 0 6px 12px rgba(0, 0, 0, 0.25);
+    transition: all 0.2s ease;
+  }
+  
+  .square:hover {
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: inset 0 0 0 2px #bbb, 0 10px 20px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(135deg, #ffffff, #f0f0f0);
+  }
+  
+  .square:active {
+    transform: scale(0.97);
+  }
+  
+  /* X and O colors */
+  .square {
+    color: #333;
+  }
+  
+  .square:has(:not(:empty)) {
+    cursor: default;
+  }
+  
+  /* ---------- Move History ---------- */
+  .moves-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .moves-list li {
+    margin-bottom: 10px;
+  }
+  
+  .game-info button {
+    width: 100%;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.2s ease;
+  }
+  
+  .game-info button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+  }
+  
+  .current-move {
+    background: linear-gradient(135deg, #43cea2, #185a9d) !important;
+    font-weight: bold;
+  }
+  
+  /* ---------- Winner Highlight ---------- */
+  .square.winner {
+    background: linear-gradient(135deg, #a8ff78, #78ffd6);
+    animation: pulseWin 0.6s ease-in-out infinite alternate;
+  }
+  
+  @keyframes pulseWin {
+    from {
+      box-shadow: 0 0 10px rgba(0, 255, 0, 0.4);
+    }
+    to {
+      box-shadow: 0 0 25px rgba(0, 255, 0, 0.9);
+    }
+  }
+  
+  /* ---------- Responsive ---------- */
+  @media (max-width: 768px) {
+    .square {
+      width: 85px;
+      height: 85px;
+      font-size: 34px;
+    }
+  
+    .game {
+      padding: 25px 20px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    body {
+      padding: 20px 10px;
+    }
+  
+    .game {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .game-board,
+    .game-info {
+      width: 100%;
+    }
+  }
+  
